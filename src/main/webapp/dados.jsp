@@ -1,0 +1,129 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ page import="model.JavaBeans"%>
+<%@ page import="java.util.ArrayList"%>
+
+<%
+String usuario = (String) session.getAttribute("usuario");
+
+if (usuario == null) {
+	response.sendRedirect("login.html");
+}
+%>
+
+<%
+ArrayList<JavaBeans> lista = (ArrayList<JavaBeans>) request.getAttribute("lista");
+%>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dados dos clientes</title>
+
+<link rel="stylesheet" href="style.css">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- HEADER BRANCO -->
+	<header class="bg-white shadow-sm p-3 mb-3">
+		<div
+			class="container d-flex justify-content-between align-items-center">
+			<h4 class="m-0 text-dark">Lista de Clientes</h4>
+			<a href="central.jsp" class="btn btn-primary btn-sm">Voltar</a>
+		</div>
+	</header>
+
+	<div class="container">
+
+		<div class="table-responsive">
+
+			<table
+				class="table table-bordered table-hover text-center align-middle">
+
+				<thead class="table-primary text-dark">
+					<tr>
+						<th>Id</th>
+						<th>Nome</th>
+						<th>CPF</th>
+						<th>Empresa</th>
+						<th>CNPJ</th>
+						<th>Telefone</th>
+						<th>Email</th>
+						<th>Nascimento</th>
+						<th>Sexo</th>
+						<th>Estado</th>
+						<th>Seguros</th>
+						<th>Indicou</th>
+						<th>Observação</th>
+						<th>Documento</th>
+						<th>Ações</th>
+					</tr>
+				</thead>
+
+				<tbody class="table-group-divider">
+
+					<%
+					if (lista != null) {
+						for (int i = 0; i < lista.size(); i++) {
+					%>
+
+					<tr>
+						<td><%=lista.get(i).getId()%></td>
+						<td><%=lista.get(i).getNome()%></td>
+						<td><%=lista.get(i).getCpf()%></td>
+						<td><%=lista.get(i).getEmpresa()%></td>
+						<td><%=lista.get(i).getCnpj()%></td>
+						<td><%=lista.get(i).getTelefone()%></td>
+						<td><%=lista.get(i).getEmail()%></td>
+						<td><%=lista.get(i).getNascimento()%></td>
+						<td><%=lista.get(i).getSexo()%></td>
+						<td><%=lista.get(i).getEstado()%></td>
+
+						<td><span class="badge bg-primary"> <%=lista.get(i).getSeguros()%>
+						</span></td>
+
+						<td><%=lista.get(i).getIndicou()%></td>
+
+						<td
+							style="max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+							<%=lista.get(i).getObservacao()%>
+						</td>
+
+						<td>
+							<%
+							if (lista.get(i).getDocumento() != null) {
+							%> <a href="view?id=<%=lista.get(i).getId()%>" target="_blank"
+							class="btn btn-success btn-sm"> Abrir </a> <%
+ } else {
+ out.print("-");
+ }
+ %>
+						</td>
+
+						<td><a href="select?id=<%=lista.get(i).getId()%>"
+							class="btn btn-sm btn-primary">Editar</a> <a
+							href="delete?id=<%=lista.get(i).getId()%>"
+							class="btn btn-sm btn-danger"
+							onclick="return confirm('Tem certeza?')">Excluir</a></td>
+					</tr>
+
+					<%
+					}
+					}
+					%>
+
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+
+</body>
+</html>

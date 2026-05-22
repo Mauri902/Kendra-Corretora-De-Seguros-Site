@@ -1,4 +1,3 @@
-/*Cores*/
 :root {
     --Azulheader: #1977B2;
     --AzulEscuro: #0c66ba;
@@ -7,12 +6,84 @@
     --Preto: #000;
     --Cinza: #B8B8B8;
     --AzulVerde: #00A86B;
+    --Verde: #50d488;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+#cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    z-index: 9999;
+    display: none;
+}
+
+#cookie-banner .content {
+    max-width: 900px;
+    margin: auto;
+}
+
+#cookie-banner button {
+    margin: 5px;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.accept {
+    background: #28a745;
+    color: white;
+}
+
+.reject {
+    background: #dc3545;
+    color: white;
+}
+
+.settings {
+    background: #007bff;
+    color: white;
+}
+
+#cookie-settings {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 10000;
+}
+
+#cookie-settings .modal {
+    background: #fff;
+    max-width: 500px;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#open-cookie-settings {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #222;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
 }
 
 .container {
@@ -58,12 +129,6 @@ img {
     border: 2px solid var(--Preto);
 }
 
-/*Celular Começo*/
-
-/**Header*/
-
-
-
 header {
     height: 70px;
     background-color: var(--BrancoPuro);
@@ -95,14 +160,6 @@ nav {
     width: 48px;
     height: 48px;
 }
-
-
-
-#home {
-    display: none;
-}
-
-
 
 #aberto {
     opacity: 0;
@@ -156,16 +213,6 @@ nav ul li a {
     color: var(--Azulheader);
 }
 
-.menu-toggle .seta{
-    display: inline-block;
-    transition: transform 0.4s ease;
-    transform-origin: center;
-}
-
-.menu-toggle.ativo .seta{
-    transform: rotate(180deg);
-}
-
 .submenu {
     margin-left: 15px;
     line-height: 13px;
@@ -176,7 +223,7 @@ nav ul li a {
     font-weight: 500;
 }
 
-.submenu .ativo{
+.submenu .ativo {
     display: block;
 }
 
@@ -205,16 +252,16 @@ nav ul li a {
 
 }
 
-/*Fim Header*/
-
-/*Main*/
-
 
 main {
-    height: 50vh;
+    height: 37vh;
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
+    border-bottom: 2px solid var(--BrancoPuro);
+}
+
+.indexmain {
     border-bottom: 2px solid var(--BrancoPuro);
     animation: bgCarousel 15s infinite;
 }
@@ -223,13 +270,17 @@ main .container {
     display: flex;
     flex-direction: column;
     padding: 0px 10px;
-    height: 50vh;
+    justify-content: center;
+    height: 100%;
+
 }
 
 .textomain {
+    margin-top: 30px;
     color: var(--Preto);
-    max-width: 180px;
-    margin-top: 100px;
+    max-width: 120px;
+    text-align: left;
+    line-height: 1.2;
 }
 
 .textomain h1 {
@@ -243,7 +294,7 @@ main .btn {
     width: 100px;
     height: 40px;
     font-size: 0.7rem;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 @keyframes bgCarousel {
@@ -273,26 +324,95 @@ main .btn {
     color: var(--BrancoPuro);
 }
 
-/**Fim Main*/
+.saudemain {
+    background: url(./img/bannersaude.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 53% center;
+}
 
-/**Section 1*/
+.mainseguros {
+    height: 35vh;
+}
+
+.mainseguros .container {
+    align-items: end;
+    justify-content: center;
+}
+
+.mainseguros .textomain {
+    text-align: center;
+    margin-left: 30px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.mainseguros .textomain h1 {
+    font-size: 0.8rem;
+}
+
+.mainseguros .textomain .btn {
+    margin: 0 auto;
+}
+
+.mainvida {
+    background: url(./img/bannervida.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 53% center;
+}
+
+.consorciomain {
+    background: url(./img/bannerconsorcio.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 53% center;
+}
+
+.automain {
+    background: url(./img/bannerauto.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 53% center;
+}
+
+.residenciamain {
+    background: url(./img/bannerresidencial.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 53% center;
+}
+
+.empresarialmain {
+    background: url(./img/bannerempresarial.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 53% center;
+}
+
+.odontomain {
+    background: url(./img/bannerodonto.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 53% center;
+}
 
 #porque {
     background-color: var(--AzulEscuro);
-    height: 75vh;
 }
 
 #porque .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 20px 15px;
 
 }
 
 #porque .textosection {
     max-width: 270px;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin: 20px 0px 30px 0px;
     color: var(--BrancoPuro);
     text-align: center;
 }
@@ -305,12 +425,7 @@ main .btn {
 .textosection p {
     text-align: center;
     margin-top: 5px;
-    font-weight: 500;
-}
-
-.imagemsection {
-    width: auto;
-    height: auto;
+    font-weight: 300;
 }
 
 .imagemsection img {
@@ -318,33 +433,27 @@ main .btn {
     height: 223px;
 }
 
-/**Section 2 e 3**/
-
-#nosso {
-    height: auto;
-}
 
 #nosso .container {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    padding: 20px 15px;
 }
 
 #nosso .container h2 {
-    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 #nosso .container .textosection {
     max-width: 350px;
-    margin-top: 15px;
     border-bottom: 2px solid var(--Azulheader);
     padding-bottom: 15px
 }
 
 #cartao .container {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    padding: 20px 15px;
     flex-direction: column;
     align-items: center;
 }
@@ -360,27 +469,13 @@ main .btn {
     overflow: hidden;
     padding: 15px 0px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.4);
-    opacity: 0;
-    transition: all 1.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.esquerda {
-    transform: translateX(-100px);
-}
-
-.direita {
-    transform: translateX(100px);
-}
-
-.card.aparecer {
-    opacity: 1;
-    transform: translateX(0);
-}
 
 .card img {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.12);
-    border-radius: 15px;
-
+    border-radius: 15px 15px 0px 0px;
 }
 
 .card h2 {
@@ -394,7 +489,6 @@ main .btn {
 
 #tatiana {
     background-color: var(--AzulEscuro);
-    height: 85vh;
 }
 
 #tatiana .container {
@@ -402,36 +496,31 @@ main .btn {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 20px 15px;
+}
+
+#tatiana .container .textosection {
+    color: var(--BrancoPuro);
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 #tatiana .container .textosection h2 {
-    margin: 30px 0px 20px 0px;
     text-align: center;
-    color: var(--BrancoPuro);
-    font-weight: 500;
-}
-
-#tatiana .container .textosection p {
-    display: none;
+    font-weight: 700;
 }
 
 #tatiana img {
     margin: 0 auto;
-}
-
-#tatiana .container #textofoto p {
-    margin-bottom: 20px;
-    color: var(--BrancoPuro);
+    border-radius: 100%;
+    border: 4px solid var(--BrancoPuro);
 }
 
 #reviews .container {
+    padding: 20px 15px;
     align-items: center;
     justify-content: center;
     border-bottom: 2px solid var(--Azulheader);
-}
-
-.review {
-    margin-top: 50px;
 }
 
 #parcerias .container {
@@ -459,35 +548,39 @@ main .btn {
     align-items: center;
     justify-content: center;
     gap: 3em;
-    animation: spin 30s infinite linear;
+    animation: spin 25s infinite linear;
     flex-shrink: 0;
 }
 
 @keyframes spin {
     from {
-        translate: 0;
+        transform: translateX(0);
     }
 
     to {
-        translate: -100%;
+        transform: translateX(-50%);
     }
 }
 
 footer {
     background-color: var(--AzulEscuro);
-    height: 107vh;
 }
 
 footer .container {
     display: flex;
     flex-direction: column;
-    padding: 30px 25px;
+    padding: 20px 15px;
     color: var(--BrancoPuro);
 }
 
 .kendra p {
     max-width: 280px;
     padding: 5px 0px;
+}
+
+.kendra a {
+    text-decoration: none;
+    color: var(--AzulEscuro);
 }
 
 
@@ -524,22 +617,21 @@ footer .informacoes a img {
     padding: 0px 5px;
 }
 
-/*Cadastro */
-
-#cadastrosection{
+#cadastrosection {
     height: 80vh;
 }
 
-#coluna1{
+#coluna1 {
     display: none;
 }
 
-#cadastrosection .container{
+#cadastrosection .container {
     align-items: center;
     text-align: center;
+    padding: 30px 45px;
 }
 
-#coluna2{
+#coluna2 {
     display: flex;
     flex-direction: column;
     padding: 35px 0px;
@@ -547,11 +639,11 @@ footer .informacoes a img {
     justify-content: center;
 }
 
-#coluna2 h2{
+#coluna2 h2 {
     color: var(--Azulheader);
 }
 
-#coluna2 input{
+#coluna2 input {
     margin: 10px 0px;
     padding: 0px 5px;
     height: 30px;
@@ -561,8 +653,115 @@ footer .informacoes a img {
     border-radius: 5px;
 }
 
-#coluna2 select{
+#coluna2 select {
     margin-top: 10px;
+    height: 30px;
+    width: 290px;
+    border: 0;
+    background-color: var(--Brancoescuro);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#coluna2 form {
+    flex-direction: column;
+    display: flex;
+    padding: 50px 0px;
+}
+
+.section1 .container {
+    flex-direction: column;
+    display: flex;
+    padding: 50px 15px;
+    align-items: center;
+    text-align: center;
+}
+
+.card1 {
+    padding: 15px 0px;
+}
+
+.card1 .card {
+    border-bottom: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+
+.card1 .card img {
+    box-shadow: none;
+    border-radius: none;
+
+}
+
+.section1 .container .btn {
+    height: 50px;
+    width: 180px;
+}
+
+.section1 .container h2 {
+    font-size: 1.7rem;
+}
+
+.card1 .card h3 {
+    font-size: 1.2rem
+}
+
+.coberturas {
+    background-color: var(--AzulEscuro);
+    color: var(--BrancoPuro);
+}
+
+.coberturas h3 {
+    font-size: 1.3rem;
+    padding: 15px 0px;
+}
+
+.coberturas ul li {
+    text-align: left;
+    padding: 5px 0px;
+}
+
+.beneficios .cardnovo {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 0px;
+}
+
+.cardnovo img {
+    padding-right: 10px;
+}
+
+.sucessosection {
+    height: 70vh;
+}
+
+.sucessosection .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--AzulEscuro);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#cadastrocliente .container {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#cadastrocliente form {
+    display: flex;
+    flex-direction: column;
+}
+
+#cadastrocliente input {
+    margin: 10px 0px;
+    padding: 0px 5px;
     height: 30px;
     width: 290px;
     border: 0;
@@ -570,13 +769,97 @@ footer .informacoes a img {
     border-radius: 5px;
 }
 
-#coluna2 form{
-    flex-direction: column;
-    display: flex;
-    padding: 50px 0px;
+#cadastrocliente select {
+    margin: 10px 0px;
+    height: 30px;
+    width: 290px;
+    border: 0;
+    background-color: var(--Brancoescuro);
+    border-radius: 5px;
 }
 
-/*Celular deitado*/
+#cadastrocliente .container .btn {
+    margin: 10px auto;
+}
+
+#cadastrocliente h2 {
+    color: var(--AzulEscuro);
+}
+
+textarea {
+    height: 80px;
+    width: 290px;
+    background-color: var(--Brancoescuro);
+    border-radius: 5px;
+    border: 0;
+    padding: 5px;
+    margin: 10px 0px;
+}
+
+#redefinir{
+    background-color: #ff0000;
+}
+
+#redefinir:hover{
+    background-color: var(--BrancoPuro);
+    color: #ff0000;
+}
+
+#cadastrosection a{
+    margin: 15px 0px;
+}
+
+.conteudo {
+    padding: 40px 20px;
+}
+
+.conteudo .container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    color: var(--AzulEscuro);
+}
+
+.conteudo img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 120px;
+}
+
+.conteudo h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.conteudo h2 {
+    font-size: 22px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.conteudo p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.conteudo ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.conteudo ul li {
+    margin-bottom: 8px;
+}
+
+.conteudo .empresa {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 @media (min-width: 576px) {
 
     nav #menuprincipal {
@@ -588,11 +871,12 @@ footer .informacoes a img {
     }
 
     .submenuSobre.mostra {
-        max-height: 220px;
+        max-height: 130px;
     }
 
     .textomain {
         margin: 40px 0px 0px 40px;
+        max-width: 180px;
     }
 
     main {
@@ -612,10 +896,6 @@ footer .informacoes a img {
         height: 40px;
     }
 
-    #porque {
-        height: 70vh;
-    }
-
     #porque .container {
         flex-direction: row;
         align-items: center;
@@ -623,21 +903,38 @@ footer .informacoes a img {
         justify-content: space-around;
     }
 
-    #tatiana {
-        height: 135vh;
+    #tatiana .textosection p {
+        padding: 5px;
     }
 
-    footer {
-        height: 190vh;
-    }
-
-    #cadastrosection{
+    #cadastrosection {
         height: 130vh;
     }
 
-    #cadastrosection .container{
+    #cadastrosection .container {
         justify-content: center;
     }
+
+    .mainseguros {
+        height: 70vh;
+    }
+
+    .mainseguros .textomain {
+        margin: 0px 35px 40px 0px;
+    }
+
+    .mainseguros .textomain h1 {
+        font-size: 1.1rem;
+    }
+
+    .section1 .container h2 {
+        font-size: 1.8rem;
+    }
+
+    .cardnovo {
+        max-width: 500px;
+    }
+
 }
 
 @media (min-width: 768px) {
@@ -645,63 +942,94 @@ footer .informacoes a img {
         max-width: 720px;
     }
 
-    main{
+    main {
         height: 40vh;
     }
 
-    main .container{
-        height: 50vh;
-        justify-content: 0;
+    main .container {
+        height: auto;
     }
 
-    main .container a{
-        width: 200px;
+    main .container a {
+        width: 180px;
         height: 45px;
         font-size: 1.1rem;
     }
 
-    .textomain{
+    .textomain {
         margin-top: 100px;
         max-width: 250px;
     }
 
-    .textomain h1{
+    .textomain h1 {
         font-size: 1.3rem;
     }
 
-    #porque{
-        height: 32vh;
-    }
-
-    #cartao .container{
+    #cartao .container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 5px;
+        gap: 20px;
         justify-content: space-around;
     }
 
-    #tatiana{
-        height: 60vh;
-    }
-
-    footer{
-        height: 90vh;
-    }
-
-    #cadastrosection{
+    #cadastrosection {
         height: 50vh;
     }
+
+    .mainseguros .container {
+        height: 100%;
+    }
+
+    .mainseguros .textomain h1 {
+        font-size: 1.5rem;
+    }
+
+    .coberturas .card1 {
+        gap: 50px;
+    }
+
+    .coberturas ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 40px;
+        justify-content: space-around;
+    }
+
+    .coberturas .card1 {
+        display: flex;
+        flex-direction: row;
+        gap: 0px 30px;
+    }
+
+    .coberturas .card1 .card {
+        width: 180px;
+        height: 270px;
+        padding: 0;
+    }
+
 }
 
 @media (min-width: 1024px) {
-        main{
-            height: 53vh;
-        }
-
-        #cadastrosection{
-            height: 65vh;
-        }
+    main {
+        height: 80vh;
     }
+
+    main .container {
+        height: 80vh;
+    }
+
+    .textomain {
+        margin-top: 40px;
+    }
+
+    #cadastrosection {
+        height: 75vh;
+    }
+
+    .mainseguros .textomain {
+        margin: 0px 35px 15px 0px;
+    }
+}
 
 /*Computador */
 @media (min-width: 1200px) {
@@ -748,7 +1076,6 @@ footer .informacoes a img {
     }
 
     #home {
-        display: block;
         color: var(--Azulheader);
         margin-top: 3px;
     }
@@ -769,7 +1096,7 @@ footer .informacoes a img {
 
     }
 
-    #cadastro a{
+    #cadastro a {
         font-size: 0.8rem;
     }
 
@@ -794,6 +1121,10 @@ footer .informacoes a img {
         padding: 0;
     }
 
+    nav ul li a:hover {
+        color: var(--AzulVerde);
+    }
+
     .submenu {
         position: absolute;
         top: 185%;
@@ -806,6 +1137,7 @@ footer .informacoes a img {
         width: 310px;
         left: 10px;
         border: 2px solid var(--Preto);
+        pointer-events: none;
     }
 
     .submenu li a {
@@ -816,8 +1148,16 @@ footer .informacoes a img {
         max-height: 700px;
     }
 
+    .submenuSeguros.mostra li a {
+        pointer-events: auto;
+    }
+
     .submenuSobre.mostra {
         max-height: 350px;
+    }
+
+    .submenuSobre.mostra li a {
+        pointer-events: auto;
     }
 
     main {
@@ -839,17 +1179,13 @@ footer .informacoes a img {
 
 
     #porque {
-        height: 55vh;
-        display: flex;
         align-items: center;
     }
 
     #porque .container {
         display: flex;
         flex-direction: row;
-        align-items: center;
         justify-content: space-between;
-        height: 55vh;
     }
 
     #porque .textosection {
@@ -918,7 +1254,7 @@ footer .informacoes a img {
     #cartao .container {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
+        gap: 30px;
         justify-content: space-around;
     }
 
@@ -926,14 +1262,11 @@ footer .informacoes a img {
         margin-top: 25px;
     }
 
-    #tatiana {
-        height: 50vh;
-    }
-
     .card {
-        align-items: first baseline;
         border-bottom: 0px;
         padding-bottom: 45px;
+        opacity: 0;
+        transition: all 1.2s ease;
     }
 
     .card .btn {
@@ -947,15 +1280,31 @@ footer .informacoes a img {
         color: var(--Azulheader);
     }
 
+    .esquerda {
+        transform: translateX(-100px);
+    }
+
+    .direita {
+        transform: translateX(100px);
+    }
+
+    .card.aparecer {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .card.aparecer:hover {
+        transform: translateX(0) translateY(-5px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
     .card h2 {
         padding: 10px 0px;
-        text-align: left;
     }
 
     .card p {
         padding-bottom: 20px;
         max-width: 200px;
-        text-align: left;
         max-width: 350px;
     }
 
@@ -964,71 +1313,141 @@ footer .informacoes a img {
         justify-content: space-evenly;
     }
 
-    #tatiana .container .textosection p {
-        display: block;
-        color: var(--BrancoPuro);
+    #tatiana .textosection {
+        max-width: 500px;
     }
 
-    #tatiana .container .textosection {
-        margin-bottom: 150px;
+    #tatiana .textosection h2 {
+        font-size: 2.3rem;
+        margin-bottom: 25px;
     }
 
-    #tatiana .container .textosection h2 {}
-
-    footer {
-        height: 27vh;
+    #tatiana .textosection p {
+        font-size: 1.5rem;
+        font-weight: 400;
     }
 
     footer .container {
         flex-direction: row;
         justify-content: space-between;
     }
-    
-    #coluna2 h2{
+
+    #coluna2 h2 {
         font-size: 2.0rem;
         margin-bottom: 15px;
     }
 
-    #coluna2{
+    #coluna2 {
         background-color: var(--BrancoPuro);
         width: 50%;
         height: 100%;
         justify-content: center;
     }
 
-    #coluna2 input{
+    #coluna2 input {
         height: 35px;
         width: 500px;
     }
 
-    #coluna2 form{
+    #coluna2 form {
         padding: 15px 0px;
     }
 
-    #coluna2 select{
+    #coluna2 select {
         margin-bottom: 40px;
     }
 
-    #coluna2 .btn{
+    #coluna2 .btn {
         display: flex;
         width: 250px;
         font-size: 1.2rem;
     }
 
-    #cadastrosection{
-        background-color: #090269;
+    #cadastrosection {
+        background: url(./img/registrobackground.png);
         height: 69vh;
     }
 
-    #cadastrosection .container{
+    #cadastrosection .container {
         display: flex;
         justify-content: right;
         max-width: none;
         height: 69vh;
-    }
-    
-    #headersaude .btn{
-        background-color: #00A86B;
+        padding: 0px;
     }
 
+    .mainseguros .textomain {
+        margin-right: 70px;
+        max-width: 450px;
+    }
+
+    .mainseguros h1 {
+        font-size: 1.5rem;
+    }
+
+    .container .card1 {
+        flex-direction: row;
+        display: flex;
+    }
+
+    .card1 .card {
+        opacity: 1;
+        transition: 0;
+    }
+
+    .section1 .container {
+        padding: 30px 0px;
+    }
+
+    .coberturas .card1 {
+        gap: 0px 130px;
+    }
+
+    .coberturas ul {
+        gap: 20px 120px;
+        margin-bottom: 25px;
+    }
+
+    .beneficios .card1 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0px 130px;
+    }
+
+    .cardnovo img {
+        padding-right: 10px;
+    }
+
+    #cadastrocliente{
+        height: 70vh;
+    }
+
+    #cadastrocliente form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0px 130px;
+    }
+
+    #cadastrocliente h2 {
+        font-size: 2.1rem;
+        margin-bottom: 30px;
+    }
+
+    #cadastrocliente input {
+        width: 390px;
+    }
+
+    #cadastrocliente select {
+        width: 390px;
+    }
+
+    textarea {
+        width: 390px;
+        height: 100px;
+    }
+
+    #cadastrocliente .btn{
+        width: 250px;
+    }
+    
 }
