@@ -1,0 +1,40 @@
+I'll retrieve the job logs and analyze the failure for you.Now let me get the workflow file to understand the build configuration:## Problem
+
+The Maven build is failing because it cannot find a `pom.xml` file in the repository root. The error message indicates:
+
+```
+[ERROR] The goal you specified requires a project to execute but there is no POM in this directory 
+(/home/runner/work/Kendra-Corretora-De-Seguros-Site/Kendra-Corretora-De-Seguros-Site).
+```
+
+## Root Cause
+
+The workflow is running `mvn clean package` from the checked-out directory, but the `pom.xml` file is either:
+1. Missing from the repository
+2. Located in a subdirectory, not at the root
+
+## Solution
+
+You need to update the workflow to specify the correct working directory or path to the `pom.xml` file. Here are two options:
+
+**Option 1: If `pom.xml` is in a subdirectory**
+
+Modify the "Build with Maven" step to change the working directory:
+
+```yaml
+- name: Build with Maven
+  working-directory: ./path/to/maven/project
+  run: mvn clean package
+```
+
+Replace `./path/to/maven/project` with the actual subdirectory containing your `pom.xml`.
+
+**Option 2: If `pom.xml` is missing**
+
+Ensure your repository includes a `pom.xml` file at the root level with your Maven project configuration.
+
+**Next Steps:**
+
+1. Check your repository to confirm where the `pom.xml` file is located
+2. Update the workflow with the correct path, or ensure `pom.xml` exists in the repository
+3. Commit and push the changes to trigger the workflow again
