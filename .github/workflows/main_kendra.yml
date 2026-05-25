@@ -32,10 +32,6 @@ jobs:
           name: java-app
           path: '${{ github.workspace }}/target/*.war'
 
-          - name: Build with Maven
-  run: mvn clean package
-  working-directory: ./github/workflows
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
