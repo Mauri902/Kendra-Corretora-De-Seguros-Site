@@ -35,3 +35,9 @@ const observer = new IntersectionObserver((entries) => {
 cards.forEach((card) => {
     observer.observe(card);
 });
+
+let ano = document.getElementById("copyrightYear")
+
+let anoAtual = new Date().getFullYear()
+
+ano.textContent = anoAtual

@@ -19,7 +19,7 @@
     <header>
         <div class="container">
             <div id="logo">
-            	<a href="index.html"><img src="./img/logo.png" alt="Logo da Kendra Seguros"></a>
+                <a href="index.html"><img src="./img/logo.png" alt="Logo da Kendra Seguros"></a>
             </div>
             <nav>
                 <button class="btnAbre">&#9776;</button>
@@ -58,11 +58,10 @@
         <div class="container">
             <div class="textomain">
                 <h1>
-                    Corretora de Seguros com Planos Personalizados,
-                    Preços Competitivos e Atendimento Especializado
+                    Corretora de Seguros com Planos Personalizados e Atendimento Especializado
                 </h1>
             </div>
-            <a href="#cartao" class="btn" >Saiba Mais</a>
+            <a href="#cartao" class="btn">Saiba Mais</a>
         </div>
     </main>
     <section id="porque">
@@ -187,7 +186,7 @@
                 <h2>Sobre a Kendra</h2>
                 <p>A Kendra Seguros nasceu do sonho de uma ex-funcionária do setor, que acredita que seguro vai além de
                     uma simples venda: é uma consultoria personalizada, focada em entender e atender as reais
-                    necessidades de cada cliente.</p>                 
+                    necessidades de cada cliente.</p>
             </div>
             <div class="contatos">
                 <h2>Contatos</h2>
@@ -213,35 +212,40 @@
             </div>
         </div>
     </footer>
-<div id="cookie-banner">
-    <div class="content">
-        Utilizamos cookies para melhorar sua experiência. Você pode aceitar, recusar ou personalizar.
-        <br><br>
-        <button class="accept" onclick="acceptAll()">Aceitar tudo</button>
-        <button class="reject" onclick="rejectAll()">Recusar</button>
-        <button class="settings" onclick="openSettings()">Configurar</button>
+    <footer class="ela">
+        <div class="container">
+            <h2>©<span id="copyrightYear"></span>E.L.A - DEV</h2>
+        </div>
+    </footer>
+    <div id="cookie-banner">
+        <div class="content">
+            Utilizamos cookies para melhorar sua experiência. Você pode aceitar, recusar ou personalizar.
+            <br><br>
+            <button class="accept" onclick="acceptAll()">Aceitar tudo</button>
+            <button class="reject" onclick="rejectAll()">Recusar</button>
+            <button class="settings" onclick="openSettings()">Configurar</button>
+        </div>
     </div>
-</div>
 
-<div id="cookie-settings">
-    <div class="modal">
-        <h3>Preferências de Cookies</h3>
+    <div id="cookie-settings">
+        <div class="modal">
+            <h3>Preferências de Cookies</h3>
 
-        <p><strong>Essenciais:</strong> Sempre ativos (necessários)</p>
+            <p><strong>Essenciais:</strong> Sempre ativos (necessários)</p>
 
-        <label>
-            <input type="checkbox" id="analytics">
-            Cookies de desempenho (analytics)
-        </label>
+            <label>
+                <input type="checkbox" id="analytics">
+                Cookies de desempenho (analytics)
+            </label>
 
-        <br><br>
-        <button onclick="savePreferences()">Salvar</button>
+            <br><br>
+            <button onclick="savePreferences()">Salvar</button>
+        </div>
     </div>
-</div>
 
-<div id="open-cookie-settings" onclick="openSettings()">
-    Cookies
-</div>
+    <div id="open-cookie-settings" onclick="openSettings()">
+        Cookies
+    </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <script src="menu.js"></script>
