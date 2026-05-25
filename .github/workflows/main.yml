@@ -1,0 +1,47 @@
+name: Build and deploy WAR app to Azure Web App - kendra
+
+on:
+  push:
+    branches:
+      - principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Verify pom
+        run: find . -name "pom.xml"
+
+      - name: Build
+        run: mvn clean package
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: java-app
+          path: target/*.war
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: java-app
+
+      - uses: azure/webapps-deploy@v3
+        with:
+          app-name: 'kendra'
+          slot-name: 'Production'
+          package: '*.war'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8FB8230144A049E6AB83B3DC7F76B062 }}
