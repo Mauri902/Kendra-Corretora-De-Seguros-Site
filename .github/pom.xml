@@ -11,7 +11,15 @@
 
     <packaging>war</packaging>
 
+    <name>kendra</name>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
     <dependencies>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -25,6 +33,7 @@
             <version>2.3.3</version>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
     <build>
