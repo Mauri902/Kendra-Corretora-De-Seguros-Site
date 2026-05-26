@@ -20,6 +20,10 @@ $(window).on('scroll', function(){
 
 const cards = document.querySelectorAll('.card');
 
+const tatiana = document.querySelectorAll(
+    '#tatiana .textosection, #tatiana #textofoto'
+);
+
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
 
@@ -35,3 +39,14 @@ const observer = new IntersectionObserver((entries) => {
 cards.forEach((card) => {
     observer.observe(card);
 });
+
+tatiana.forEach((el) => {
+    observer.observe(el);
+});
+
+let ano = document.getElementById("copyrightYear")
+
+let anoAtual = new Date().getFullYear()
+
+ano.textContent = anoAtual
+

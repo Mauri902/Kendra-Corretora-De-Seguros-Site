@@ -10,7 +10,7 @@
 %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -138,6 +138,11 @@
                 <a href="https://br.linkedin.com/company/kendra-corretora-de-seguros" target="_blank"><img
                         src="./img/linkedin.png" alt="">Linkedin</a>
             </div>
+        </div>
+    </footer>
+    <footer class="ela">
+        <div class="container">
+            <h2>©<span id="copyrightYear"></span>E.L.A - DEV</h2>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

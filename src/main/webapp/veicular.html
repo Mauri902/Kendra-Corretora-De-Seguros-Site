@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,10 +16,10 @@
 </head>
 
 <body>
-    <header>
+    <heade id=cabecalho>
         <div class="container">
             <div id="logo">
-            	<a href="index.html"><img src="./img/logo.png" alt="Logo da Kendra Seguros"></a>
+                <a href="index.html"><img src="./img/logo.png" alt="Logo da Kendra Seguros"></a>
             </div>
             <nav>
                 <button class="btnAbre">&#9776;</button>
@@ -54,7 +54,7 @@
             </div>
         </div>
     </header>
-    <main class="mainseguros automain">
+    <main class="mainseguros automain" id="principal">
         <div class="container">
             <div class="textomain">
                 <h1>O seguro auto oferece proteção, segurança financeira e assistência nos momentos em que você mais
@@ -62,7 +62,7 @@
             </div>
         </div>
     </main>
-    <section class="section1 beneficios">
+    <section class="section1 beneficios" id="sectionum">
         <div class="container">
             <h2>Por que contratar o Seguro Auto</h2>
             <div class="card1">
@@ -97,11 +97,11 @@
                         <p>Serviços emergenciais para ajudar em imprevistos com o veículo.</p>
                     </div>
                 </div>
-            </div>>
+            </div>
         </div>
     </section>
 
-    <section class="section1 coberturas">
+    <section class="section1 coberturas" id="sectiondois">
         <div class="container">
             <h2>Coberturas</h2>
             <div class="card1">
@@ -120,12 +120,12 @@
                 <div class="card">
                     <img src="./img/danoscarros.png" alt="Danos a terceiros ícone">
                     <h3>Danos a terceiros</h3>
-                    <p>Cobertura para danos materiais e corporais causados a terceiros no veículo.</p>
+                    <p>Cobertura para danos materiais e corporais causados a terceiros.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section1 beneficios">
+    <section class="section1 beneficios" id="sectiontres">
         <div class="container">
             <h2>Benefícios e Vantagens</h2>
             <div class="card1">
@@ -181,6 +181,14 @@
                 <a href="uso.html" target="_blank">Termos de Uso</a>
                 <a href="aviso.html" target="_blank">Aviso Legal</a>
             </div>
+            <div class="informacoes">
+                <h2>Mapa do site</h2>
+                <a href="#cabecalho">Cabeçalho</a>
+                <a href="#principal">Principal</a>
+                <a href="#sectionum">Por que contratar o seguro auto?</a>
+                <a href="#sectiondois">Coberturas</a>
+                <a href="#sectiontres">Benefícios e vantagens</a>
+            </div>
             <div class="redessociais">
                 <h2>Redes Sociais</h2>
                 <a href="https://www.instagram.com/kendraseguros/" target="_blank"><img src="./img/instagram.png"
@@ -190,6 +198,11 @@
                 <a href="https://br.linkedin.com/company/kendra-corretora-de-seguros" target="_blank"><img
                         src="./img/linkedin.png" alt="">LinkedIn</a>
             </div>
+        </div>
+    </footer>
+    <footer class="ela">
+        <div class="container">
+            <h2>©<span id="copyrightYear"></span>E.L.A - DEV</h2>
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
